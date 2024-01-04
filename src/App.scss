@@ -1,0 +1,12 @@
+@import './styles/variables';
+@import './styles/mixins';
+
+#root {
+min-height: 100vh;
+background-color: rgb(61, 61, 61);
+}
+
+.main-content {
+  flex: 1 0 75%;
+  margin: 20px;
+}

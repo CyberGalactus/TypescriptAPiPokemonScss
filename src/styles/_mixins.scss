@@ -1,0 +1,12 @@
+@mixin flexbox ($direction: row) {
+    align-items: center;
+    flex-direction: $direction;
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin responsive-mobile {
+    @media screen and (max-width: $screen-mobile) {
+        @content;
+    }
+}

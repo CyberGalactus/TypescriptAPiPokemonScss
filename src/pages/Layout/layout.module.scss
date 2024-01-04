@@ -1,0 +1,107 @@
+@import '../../App.scss';
+
+$menu-border-color: #f0f0f0;
+
+%menuItem {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    color: black;
+    margin-right: 20px;
+
+    &:hover {
+        color: white;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 100%;
+        height: 10px;
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform 0.9s ease;
+    }
+
+    &:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+}
+
+.menu {
+    padding: $indent__base;
+    height: 87px;
+    width: 100%;
+
+    font: {
+        family: $font-montserrat;
+        size: $font-size__m;
+    }
+
+    &__home {
+        @extend %menuItem;
+
+        &:hover {
+            background-color: #919191;
+        }
+
+        &::after {
+            background-color: #919191;
+        }
+    }
+
+    // &__about {
+    //     @extend %menuItem;
+
+    //     &:hover {
+    //         background-color: #e3350d;
+    //     }
+
+    //     &::after {
+    //         background-color: #e3350d;
+    //     }
+    // }
+
+    // &__pokemon {
+    //     @extend %menuItem;
+
+    //     &:hover {
+    //         background-color: #ee6b2f;
+    //     }
+
+    //     &::after {
+    //         background-color: #ee6b2f;
+    //     }
+    // }
+
+    &__evolution {
+        @extend %menuItem;
+
+        &:hover {
+            background-color: #e6bc2f;
+        }
+
+        &::after {
+            background-color: #e6bc2f;
+        }
+    }
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+@include responsive-mobile {
+    .menu {
+        max-width: 327px;
+    }
+    
+    %menuItem{
+        color: white;
+    }
+
+}
